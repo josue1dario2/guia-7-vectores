@@ -42,7 +42,7 @@ void cargarArticulos(int articulos[])
     cin >> cantidad;
     while (articulo != 0)
     {
-        articulos[articulo - 1] = cantidad;
+        articulos[articulo - 1] += cantidad;
         cout << "Ingrese el nro del articulo (1-20):";
         cin >> articulo;
         if (articulo == 0)
