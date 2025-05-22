@@ -13,43 +13,7 @@
 #include <iostream>
 using namespace std;
 
-int obtenerEdad();
-void mostrarCantidad(int vec[], int DECADAS);
-
 int main()
 {
-    const int NUM_PERSONAS = 200;
-    const int DECADAS = 10;
-    int conteoDecadas[DECADAS] = {};
-
-    for (int i = 0; i < NUM_PERSONAS; i++)
-    {
-        int edad = obtenerEdad();
-        int decada = edad / 10;
-        if (edad >= 90)
-            decada = 9;
-        conteoDecadas[decada]++;
-    }
-    mostrarCantidad(conteoDecadas, DECADAS);
-
     return 0;
-}
-int obtenerEdad()
-{
-    static bool inicializado = false;
-    if (!inicializado)
-    {
-        srand(time(0));
-        inicializado = true;
-    }
-    return (rand() % 99) + 1;
-}
-void mostrarCantidad(int conteoDecadas[], int DECADAS)
-{
-    cout << "\nResultados por década:" << endl;
-    for (int i = 0; i < DECADAS; i++)
-    {
-        cout << "Década " << i << ". (Edad " << (i == 0 ? 1 : i * 10) << "-" << (i == 9 ? 99 : (i + 1) * 10 - 1)
-             << ") Cantidad de encuestados: " << conteoDecadas[i] << endl;
-    }
 }
